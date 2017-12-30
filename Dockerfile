@@ -23,6 +23,7 @@ RUN apt-get update && apt-get install -y unzip curl openjdk-8-jre-headless maria
     rm -f $GLASSFISH_PKG && \
     /etc/init.d/mysql start
 
+COPY h2-1.4.196.jar /glassfish5/glassfish/domains/domain1/lib/ext/
 COPY docker-entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 
